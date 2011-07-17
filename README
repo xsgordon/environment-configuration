@@ -1,0 +1,4 @@
+Environment Configuration
+=========================
+
+This project is a container for aliases, configuration files, and scripts with which my standard operating environment can be replicate. It is intended that the configuration be unpacked to the user's home directory. 
