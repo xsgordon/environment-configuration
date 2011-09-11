@@ -29,6 +29,9 @@ alias less='/usr/bin/less -R'
 alias more='/usr/bin/more -R'
 #alias svndiff="svn diff ${@} | colordiff"
 
+# Default xmllint to DocBook 4.5 DTD
+alias xmllint='xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd'
+
 # Alias wget to graphically notify
 #alias wget='wget ${@} | /usr/bin/notify-send "Download complete!"'
 alias wget='wget ${@}'
