@@ -19,19 +19,19 @@ export CDPATH=.:/home/sgordon/Documents/books/redhat/
 set -o vi
 
 # Aliases for adding some colour
-alias diff='/usr/bin/colordiff'
-alias grep='/bin/grep --color'
-alias zgrep='/usr//bin/zgrep --color'
-alias less='/usr/bin/less -R'
-alias more='/usr/bin/more -R'
+alias diff="/usr/bin/colordiff"
+alias grep="/bin/grep --color"
+alias zgrep="/usr//bin/zgrep --color"
+alias less="/usr/bin/less -R"
+alias more="/usr/bin/more -R"
 #alias svndiff="svn diff ${@} | colordiff"
 
 # Default xmllint to DocBook 4.5 DTD
-alias xmllint='xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd'
+alias xmllint="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
 
 # Alias wget to graphically notify
-#alias wget='wget ${@} | /usr/bin/notify-send "Download complete!"'
-alias wget='wget ${@}'
+#alias wget="wget ${@} | /usr/bin/notify-send "Download complete!""
+alias wget="wget ${@}"
 
 # Modify history search keys, entering 'sudo' and pressing up returns last
 # command run that started with sudo for example.
@@ -43,16 +43,20 @@ bind '"\e[B"':history-search-forward
 # set the prompt to save history after a command is executed,
 # not when the session ends.
 shopt -s histappend
-PROMPT_COMMAND='$PROMPT_COMMAND; history -a; history -n'
+if [ "${PROMPT_COMMAND}" ]; then
+	export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"
+else
+	export PROMPT_COMMAND="history -a; history -n"
+fi
 
 # Ignore blank/repeated lines in bash history.
 export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
 
 # Set vim as default editor
-export SVN_EDITOR='/usr/bin/vim'
-export SVN_MERGE='/usr/bin/meld'
-export EDITOR='/usr/bin/vim'
+export SVN_EDITOR="/usr/bin/vim"
+export SVN_MERGE="/usr/bin/meld"
+export EDITOR="/usr/bin/vim"
 
 # Speed up beagle indexing
 export BEAGLE_EXCERCISE_THE_DOG=1
