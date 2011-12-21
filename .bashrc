@@ -41,8 +41,16 @@ alias wget='wget ${@}'
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
+# Some further history shenanigans, append to the history file 
+# (rather than overwrite it) to support multiple sessions. Then
+# set the prompt to save history after a command is executed,
+# not when the session ends.
+shopt -s histappend
+PROMPT_COMMAND='$PROMPT_COMMAND; history -a; history -n'
+
 # Ignore blank/repeated lines in bash history.
 export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
 
 # Set vim as default editor
 export SVN_EDITOR='/usr/bin/vim'
@@ -51,3 +59,4 @@ export EDITOR='/usr/bin/vim'
 
 # Speed up beagle indexing
 export BEAGLE_EXCERCISE_THE_DOG=1
+PATH=$PATH:/usr/share/maven2/bin
