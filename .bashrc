@@ -15,9 +15,6 @@ export PATH="${PATH}:~/bin/"
 # Use cdpath to setup some shortcuts
 export CDPATH=.:/home/sgordon/Documents/books/redhat/
 
-# Share history between all open shells.
-#export PROMPT_COMMAND="history -a; history -n"
-
 # Set bash to use vi style key binds, I will regret this.
 set -o vi
 
