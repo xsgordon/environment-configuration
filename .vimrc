@@ -17,6 +17,9 @@ set autoread
 " Always show the current position
 set ruler
 
+" Highlight the current line
+set cul
+
 " Show matching brackets
 set showmatch
 set mat=2
@@ -49,6 +52,9 @@ set autoindent
 vnoremap < <gv
 vnoremap > >gv
 
+" Change the way the status line(s) work
+set laststatus=2
+set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 
 set thesaurus+=/home/sgordon/.vim/thesaurus/mthesaur.txt
 
