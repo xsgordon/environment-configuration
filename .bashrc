@@ -24,6 +24,11 @@ alias grep="/bin/grep --color"
 alias zgrep="/usr//bin/zgrep --color"
 alias less="/usr/bin/less -R"
 alias more="/usr/bin/more -R"
+
+# Alias to include ssh options, allows me to keep these in my 'travelling' 
+# config rather than my SSH configs on specific machines.
+alias ssh="ssh -o VisualHostKey=yes"
+
 #alias svndiff="svn diff ${@} | colordiff"
 
 # Default xmllint to DocBook 4.5 DTD
