@@ -64,3 +64,6 @@ if has("autocmd") && exists("+omnifunc")
     \     setlocal omnifunc=syntaxcomplete#Complete |
     \   endif
 endif
+
+au BufRead,BufNewFile *.contentspec set filetype=contentspec
+au! Syntax contentspec source ~/.vim/syntax/contentspec.vim
