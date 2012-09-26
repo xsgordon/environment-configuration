@@ -12,9 +12,6 @@ fi
 # Set path to include user scripts
 export PATH="${PATH}:~/bin/"
 
-# Use cdpath to setup some shortcuts
-export CDPATH=.:/home/sgordon/Documents/books/redhat/
-
 # Set bash to use vi style key binds, I will regret this.
 set -o vi
 
