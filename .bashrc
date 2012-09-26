@@ -56,6 +56,4 @@ export SVN_EDITOR="/usr/bin/vim"
 export SVN_MERGE="/usr/bin/meld"
 export EDITOR="/usr/bin/vim"
 
-# Speed up beagle indexing
-export BEAGLE_EXCERCISE_THE_DOG=1
 PATH=$PATH:/usr/share/maven2/bin
