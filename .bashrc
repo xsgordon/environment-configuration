@@ -34,10 +34,6 @@ alias ssh="ssh -o VisualHostKey=yes"
 # Default xmllint to DocBook 4.5 DTD
 alias xmllint="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
 
-# Alias wget to graphically notify
-#alias wget="wget ${@} | /usr/bin/notify-send "Download complete!""
-alias wget="wget ${@}"
-
 # Modify history search keys, entering 'sudo' and pressing up returns last
 # command run that started with sudo for example.
 bind '"\e[A"':history-search-backward
