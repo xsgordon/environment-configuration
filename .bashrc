@@ -55,5 +55,3 @@ export HISTSIZE=1000
 export SVN_EDITOR="/usr/bin/vim"
 export SVN_MERGE="/usr/bin/meld"
 export EDITOR="/usr/bin/vim"
-
-PATH=$PATH:/usr/share/maven2/bin
