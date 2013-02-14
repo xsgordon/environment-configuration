@@ -42,10 +42,9 @@ au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
 " Tab rules...
-set softtabstop=4
 set shiftwidth=4
 set tabstop=4
-set noexpandtab
+set expandtab
 set autoindent
 
 " Set a warning colour at 80 characters.
