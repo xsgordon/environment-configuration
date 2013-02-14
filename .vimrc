@@ -48,6 +48,9 @@ set tabstop=4
 set noexpandtab
 set autoindent
 
+" Set a warning colour at 80 characters.
+set colorcolumn=80
+
 " Support repeated block indentation
 vnoremap < <gv
 vnoremap > >gv
