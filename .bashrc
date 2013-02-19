@@ -29,7 +29,8 @@ alias ssh="ssh -o VisualHostKey=yes"
 #alias svndiff="svn diff ${@} | colordiff"
 
 # Default xmllint to DocBook 4.5 DTD
-alias xmllint="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+alias xmllint-db4="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+alias xmllint-db5="xmllint --relaxng http://docbook.org/xml/5.0/rng/docbook.rng" 
 
 # Modify history search keys, entering 'sudo' and pressing up returns last
 # command run that started with sudo for example.
