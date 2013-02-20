@@ -50,6 +50,17 @@ set autoindent
 " Set a warning colour at 80 characters.
 set colorcolumn=80
 
+" Highlight trailing spaces and all tab characters in red.
+highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraTabs ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+match ExtraTabs /\t\+/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraTabs /^\t\+/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " Support repeated block indentation
 vnoremap < <gv
 vnoremap > >gv
