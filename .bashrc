@@ -12,9 +12,6 @@ fi
 # Set path to include user scripts
 export PATH="${PATH}:~/bin/"
 
-# Use cdpath to setup some shortcuts
-export CDPATH=.:/home/sgordon/Documents/books/redhat/
-
 # Set bash to use vi style key binds, I will regret this.
 set -o vi
 
@@ -32,11 +29,8 @@ alias ssh="ssh -o VisualHostKey=yes"
 #alias svndiff="svn diff ${@} | colordiff"
 
 # Default xmllint to DocBook 4.5 DTD
-alias xmllint="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
-
-# Alias wget to graphically notify
-#alias wget="wget ${@} | /usr/bin/notify-send "Download complete!""
-alias wget="wget ${@}"
+alias xmllint-db4="xmllint --dtdvalid http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+alias xmllint-db5="xmllint --relaxng http://docbook.org/xml/5.0/rng/docbook.rng" 
 
 # Modify history search keys, entering 'sudo' and pressing up returns last
 # command run that started with sudo for example.
@@ -62,7 +56,3 @@ export HISTSIZE=1000
 export SVN_EDITOR="/usr/bin/vim"
 export SVN_MERGE="/usr/bin/meld"
 export EDITOR="/usr/bin/vim"
-
-# Speed up beagle indexing
-export BEAGLE_EXCERCISE_THE_DOG=1
-PATH=$PATH:/usr/share/maven2/bin
