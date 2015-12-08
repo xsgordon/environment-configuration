@@ -83,3 +83,6 @@ endif
 
 au BufRead,BufNewFile *.contentspec set filetype=contentspec
 au! Syntax contentspec source ~/.vim/syntax/contentspec.vim
+
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.rst setlocal textwidth=80
