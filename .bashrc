@@ -57,6 +57,9 @@ export SVN_EDITOR="/usr/bin/vim"
 export SVN_MERGE="/usr/bin/meld"
 export EDITOR="/usr/bin/vim"
 
+# Set Go path
+export GOPATH="~/gocode"
+
 # Include git branch in prompt. Blatantly copied from:
 # https://techcommons.stanford.edu/topics/git/show-git-branch-bash-prompt
 function parse_git_branch {
