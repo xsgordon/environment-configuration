@@ -1,0 +1,5 @@
+[user]
+	name = Stephen Gordon
+	email = sgordon@redhat.com
+[push]
+	default = simple

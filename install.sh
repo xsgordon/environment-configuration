@@ -8,7 +8,7 @@ DATE=`date +%Y%m%d`
 #  - if they do and they are links unlink them
 # Then create links to the location of the checkout, this way all that is
 # required in future to get the latest is to do a git pull.
-for FILE in ".vimrc" ".bashrc"; do
+for FILE in ".vimrc" ".bashrc" ".gitconfig"; do
     if [ -f "${HOME}/${FILE}" ]; then
         if [ -L "${HOME}/${FILE}" ]; then
             echo "Unlinking ${HOME}/${FILE}"
