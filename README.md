@@ -12,5 +12,5 @@ Installation
 
 * cd environment-configuration
 
-* sh install.sh
+* make install
 

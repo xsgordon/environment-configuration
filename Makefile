@@ -1,5 +1,4 @@
-default:
-	echo "make install"
+default: install	
 
 install:
 	sh install.sh
