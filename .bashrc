@@ -58,7 +58,7 @@ export SVN_MERGE="/usr/bin/meld"
 export EDITOR="/usr/bin/vim"
 
 # Set Go path
-export GOPATH="~/gocode"
+export GOPATH="/home/`basename ~`/gocode"
 
 # Include git branch in prompt. Blatantly copied from:
 # https://techcommons.stanford.edu/topics/git/show-git-branch-bash-prompt
