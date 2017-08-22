@@ -60,6 +60,12 @@ export EDITOR="/usr/bin/vim"
 # Set Go path
 export GOPATH="/home/`basename ~`/gocode"
 
+# Ansible roles directory for galaxy
+export ANSIBLE_ROLES_PATH=~/roles
+if [ ! -d "${ANSIBLE_ROLES_PATH}" ]; then
+    mkdir "${ANSIBLE_ROLES_PATH}"
+fi
+
 # Include git branch in prompt. Blatantly copied from:
 # https://techcommons.stanford.edu/topics/git/show-git-branch-bash-prompt
 function parse_git_branch {
