@@ -1,0 +1,66 @@
+---
+#   ansible-playbook -i hosts environment-configuration.yaml --extra-vars="server=true user=sgordon"
+#   ansible-playbook -i hosts environment-configuration.yaml --extra-vars="desktop=true user=sgordon"
+- hosts: "*"
+  remote_user: root
+  tasks:
+      # Pre-reqs
+      - package: name=libselinux-python state=latest
+      # Common steps
+      - include: tasks/update.yaml
+      - include: tasks/nested-virt-intel.yaml
+      - include: tasks/virt-install.yaml
+        when: desktop == true and ansible_distribution == "Fedora"
+      # RPM Fusion
+      - package: name="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" state="latest"
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name="https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" state="latest"
+        when: desktop == true and ansible_distribution == "Fedora"
+      # Common packages
+      - package: name=vim state=latest
+      - package: name=git state=latest
+      - package: name=wget state=latest
+      - package: name=tuned state=latest
+      - service: name=tuned state=started enabled=yes
+      # Desktop/laptop packages
+      - package: name=ansible state=latest
+        when: desktop == true
+      - package: name=chkrootkit state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=gitstats state=latest
+        when: desktop == true
+      - package: name=gimp state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=gnome-tweak-tool state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=inkscape state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=mc state=latest
+        when: desktop == true
+      - package: name=python-bugzilla state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=screen state=latest
+        when: desktop == true
+      - package: name=spice-xpi state=latest
+        when: desktop == true
+      - package: name=xchat state=latest
+        when: desktop == true
+      - package: name=youtube-dl state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package:
+          name: https://downloads.slack-edge.com/linux_releases/slack-2.6.2-0.1.fc21.x86_64.rpm
+          state: present
+        when: desktop == true and ansible_distribution == "Fedora"
+      - lineinfile:
+          dest: /usr/share/applications/slack.desktop
+          regexp: "^Exec="
+          line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
+        when: desktop == true and ansible_distribution == "Fedora"
+      #TODO: chrome
+      #- git:
+      #    repo: "https://github.com/xsgordon/environment-configuration.git"
+      #    dest: "/home/{{user}}/environment-configuration"
+      #    #- shell: "/home/{{user}}/environment-configuration/install.sh"
+      #    #chdir: "/home/{{user}}/environment-configuration/"
+      #    #become: yes
+      #    #become_user: "{{user}}"
