@@ -66,10 +66,14 @@
       - name: Install chrome
         package: name=google-chrome-stable state=latest
         when: desktop == true and ansible_distribution == "Fedora"
-      #- git:
-      #    repo: "https://github.com/xsgordon/environment-configuration.git"
-      #    dest: "/home/{{user}}/environment-configuration"
-      #    #- shell: "/home/{{user}}/environment-configuration/install.sh"
-      #    #chdir: "/home/{{user}}/environment-configuration/"
-      #    #become: yes
-      #    #become_user: "{{user}}"
+      # Download and install dotfiles
+      - name: Clone environment-configuration
+        git:
+          repo: https://github.com/xsgordon/environment-configuration.git
+          dest: /home/{{ user }}/environment-configuration
+      - name: Execute environment-configuration
+        shell: /home/{{ user }}/environment-configuration/install.sh
+        args:
+          chdir: /home/{{ user }}/environment-configuration/
+        become: yes
+        become_user: "{{ user }}"
