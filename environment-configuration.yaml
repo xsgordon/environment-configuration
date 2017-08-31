@@ -47,9 +47,14 @@
         when: desktop == true
       - package: name=youtube-dl state=latest
         when: desktop == true and ansible_distribution == "Fedora"
-      - package:
-          name: https://downloads.slack-edge.com/linux_releases/slack-2.6.2-0.1.fc21.x86_64.rpm
-          state: present
+      - name: Enable slack repo
+        yum_repository:
+            name: slack
+            description: slack
+            baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
+            gpgkey: https://packagecloud.io/gpg.key
+        when: desktop == true and ansible_distribution == "Fedora"
+      - package: name=slack state=latest
         when: desktop == true and ansible_distribution == "Fedora"
       - lineinfile:
           dest: /usr/share/applications/slack.desktop
