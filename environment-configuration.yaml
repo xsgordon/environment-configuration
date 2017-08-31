@@ -82,6 +82,7 @@
       - name: Enable OpenRA repo
         yum_repository:
             name: OpenRA
+            description: OpenRA
             baseurl: http://download.opensuse.org/repositories/games:/openra/Fedora_26/
             gpgkey: http://download.opensuse.org/repositories/games:/openra/Fedora_26/repodata/repomd.xml.key
         when: desktop == "true"
