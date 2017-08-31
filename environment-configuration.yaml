@@ -67,9 +67,21 @@
           name: google-chrome
           description: google-chrome
           baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
+          gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
         when: desktop == true and ansible_distribution == "Fedora"
       - name: Install chrome
         package: name=google-chrome-stable state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
+      # Enable playonlinux and install playonlinux
+      - name: Enable playonlinux repo
+        yum_repository:
+            name: playonlinux
+            description: playonlinux
+            baseurl: http://rpm.playonlinux.com/fedora/yum/base
+            gpgkey: http://rpm.playonlinux.com/public.gpg
+        when: desktop == true and ansible_distribution == "Fedora"
+      - name: Install playonlinux
+        package: name=playonlinux state=latest
         when: desktop == true and ansible_distribution == "Fedora"
       # Download and install dotfiles
       - name: Clone environment-configuration
