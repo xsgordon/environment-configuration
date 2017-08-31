@@ -56,7 +56,16 @@
           regexp: "^Exec="
           line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
         when: desktop == true and ansible_distribution == "Fedora"
-      #TODO: chrome
+      # Enable google-chrome repo and install chrome
+      - name: Enable chrome repo
+        yum_repository:
+          name: google-chrome
+          description: google-chrome
+          baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
+        when: desktop == true and ansible_distribution == "Fedora"
+      - name: Install chrome
+        package: name=google-chrome-stable state=latest
+        when: desktop == true and ansible_distribution == "Fedora"
       #- git:
       #    repo: "https://github.com/xsgordon/environment-configuration.git"
       #    dest: "/home/{{user}}/environment-configuration"
