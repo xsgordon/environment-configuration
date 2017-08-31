@@ -10,12 +10,12 @@
       - include: tasks/update.yaml
       - include: tasks/nested-virt-intel.yaml
       - include: tasks/virt-install.yaml
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # RPM Fusion
       - package: name="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" state="latest"
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name="https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" state="latest"
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # Common packages
       - package: name=vim state=latest
       - package: name=git state=latest
@@ -26,19 +26,19 @@
       - package: name=ansible state=latest
         when: desktop == true
       - package: name=chkrootkit state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=gitstats state=latest
         when: desktop == true
       - package: name=gimp state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=gnome-tweak-tool state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=inkscape state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=mc state=latest
         when: desktop == true
       - package: name=python-bugzilla state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=screen state=latest
         when: desktop == true
       - package: name=spice-xpi state=latest
@@ -46,21 +46,21 @@
       - package: name=xchat state=latest
         when: desktop == true
       - package: name=youtube-dl state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - name: Enable slack repo
         yum_repository:
             name: slack
             description: slack
             baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
             gpgkey: https://packagecloud.io/gpg.key
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - package: name=slack state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - lineinfile:
           dest: /usr/share/applications/slack.desktop
           regexp: "^Exec="
           line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # Enable google-chrome repo and install chrome
       - name: Enable chrome repo
         yum_repository:
@@ -68,10 +68,10 @@
           description: google-chrome
           baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
           gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - name: Install chrome
         package: name=google-chrome-stable state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # Enable playonlinux and install playonlinux
       - name: Enable playonlinux repo
         yum_repository:
@@ -79,20 +79,20 @@
             description: playonlinux
             baseurl: http://rpm.playonlinux.com/fedora/yum/base
             gpgkey: http://rpm.playonlinux.com/public.gpg
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - name: Install playonlinux
         package: name=playonlinux state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # Enable openra and install openra
       - name: Enable OpenRA repo
         yum_repository:
             name: OpenRA
             baseurl: http://download.opensuse.org/repositories/games:/openra/Fedora_26/
             gpgkey: http://download.opensuse.org/repositories/games:/openra/Fedora_26/repodata/repomd.xml.key
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       - name: Install OpenRA
         package: name=openra state=latest
-        when: desktop == true and ansible_distribution == "Fedora"
+        when: desktop == true
       # Download and install dotfiles
       - name: Clone environment-configuration
         git:
