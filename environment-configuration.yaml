@@ -11,6 +11,18 @@
       - include: tasks/nested-virt-intel.yaml
       - include: tasks/virt-install.yaml
         when: desktop == "true"
+      # Docker machine setup
+      - name: Get docker-machine KVM driver
+        get_url:
+          url: https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm
+          dest: /usr/local/bin/docker-machine-driver-kvm
+          mode: 0755
+        when: desktop == "true"
+      - user:
+          name: "{{ user }}"
+          append: yes
+          groups: libvirt
+        when: desktop == "true"
       # Common packages
       - package: name=vim state=latest
       - package: name=git state=latest
