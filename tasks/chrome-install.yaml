@@ -1,0 +1,10 @@
+---
+# Enable google-chrome repo and install chrome
+- name: Enable chrome repo
+  yum_repository:
+    name: google-chrome
+    description: google-chrome
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
+    gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
+- name: Install chrome
+  package: name=google-chrome-stable state=latest

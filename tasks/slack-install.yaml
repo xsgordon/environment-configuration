@@ -1,0 +1,14 @@
+---
+- name: Enable slack repo
+  yum_repository:
+      name: slack
+      description: slack
+      baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
+      gpgkey: https://packagecloud.io/gpg.key
+- package: name=slack state=latest
+  when: desktop == "true"
+- lineinfile:
+    dest: /usr/share/applications/slack.desktop
+    regexp: "^Exec="
+    line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
+  when: desktop == "true"

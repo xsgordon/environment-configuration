@@ -11,17 +11,7 @@
       - include: tasks/nested-virt-intel.yaml
       - include: tasks/virt-install.yaml
         when: desktop == "true"
-      # Docker machine setup
-      - name: Get docker-machine KVM driver
-        get_url:
-          url: https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm
-          dest: /usr/local/bin/docker-machine-driver-kvm
-          mode: 0755
-        when: desktop == "true"
-      - user:
-          name: "{{ user }}"
-          append: yes
-          groups: libvirt
+      - include: tasks/docker-machine-kvm-install.yaml
         when: desktop == "true"
       # Common packages
       - package: name=vim state=latest
@@ -54,52 +44,13 @@
         when: desktop == "true"
       - package: name=youtube-dl state=latest
         when: desktop == "true"
-      - name: Enable slack repo
-        yum_repository:
-            name: slack
-            description: slack
-            baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
-            gpgkey: https://packagecloud.io/gpg.key
+      - include: tasks/slack-install.yaml
         when: desktop == "true"
-      - package: name=slack state=latest
+      - include: tasks/chrome-install.yaml
         when: desktop == "true"
-      - lineinfile:
-          dest: /usr/share/applications/slack.desktop
-          regexp: "^Exec="
-          line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
+      - include: tasks/playonlinux-install.yaml
         when: desktop == "true"
-      # Enable google-chrome repo and install chrome
-      - name: Enable chrome repo
-        yum_repository:
-          name: google-chrome
-          description: google-chrome
-          baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
-          gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
-        when: desktop == "true"
-      - name: Install chrome
-        package: name=google-chrome-stable state=latest
-        when: desktop == "true"
-      # Enable playonlinux and install playonlinux
-      - name: Enable playonlinux repo
-        yum_repository:
-            name: playonlinux
-            description: playonlinux
-            baseurl: http://rpm.playonlinux.com/fedora/yum/base
-            gpgkey: http://rpm.playonlinux.com/public.gpg
-        when: desktop == "true"
-      - name: Install playonlinux
-        package: name=playonlinux state=latest
-        when: desktop == "true"
-      # Enable openra and install openra
-      - name: Enable OpenRA repo
-        yum_repository:
-            name: OpenRA
-            description: OpenRA
-            baseurl: http://download.opensuse.org/repositories/games:/openra/Fedora_26/
-            gpgkey: http://download.opensuse.org/repositories/games:/openra/Fedora_26/repodata/repomd.xml.key
-        when: desktop == "true"
-      - name: Install OpenRA
-        package: name=openra state=latest
+      - include: tasks/openra-install.yaml
         when: desktop == "true"
       # Download and install dotfiles
       - name: Clone environment-configuration

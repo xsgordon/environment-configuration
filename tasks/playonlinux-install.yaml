@@ -1,0 +1,10 @@
+---
+# Enable playonlinux and install playonlinux
+- name: Enable playonlinux repo
+  yum_repository:
+    name: playonlinux
+    description: playonlinux
+    baseurl: http://rpm.playonlinux.com/fedora/yum/base
+    gpgkey: http://rpm.playonlinux.com/public.gpg
+- name: Install playonlinux
+  package: name=playonlinux state=latest
