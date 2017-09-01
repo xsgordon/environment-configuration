@@ -42,6 +42,8 @@
         when: desktop == "true"
       - package: name=xchat state=latest
         when: desktop == "true"
+      - package: name=terminator state=latest
+        when: desktop == "true"
       - package: name=youtube-dl state=latest
         when: desktop == "true"
       - include: tasks/slack-install.yaml
