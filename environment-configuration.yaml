@@ -22,6 +22,8 @@
       # Desktop/laptop packages
       - package: name=ansible state=latest
         when: desktop == "true"
+      - package: name=colordiff state=latest
+        when: desktop == "true"
       - package: name=chkrootkit state=latest
         when: desktop == "true"
       - package: name=gitstats state=latest

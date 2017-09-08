@@ -16,7 +16,9 @@ export PATH="${PATH}:~/bin/"
 set -o vi
 
 # Aliases for adding some colour
-alias diff="/usr/bin/colordiff"
+if [ -f /usr/bin/colordiff ]; then
+    alias diff="/usr/bin/colordiff"
+fi
 alias grep="/bin/grep --color"
 alias zgrep="/usr//bin/zgrep --color"
 alias less="/usr/bin/less -R"
