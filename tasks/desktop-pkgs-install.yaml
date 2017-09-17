@@ -1,0 +1,38 @@
+---
+- name: Install ansible
+  package: name=ansible state=latest
+- name: Install colordiff
+  package: name=colordiff state=latest
+- name: Install chkrootkit
+  package: name=chkrootkit state=latest
+- name: Install dia
+  package: name=dia state=latest
+- name: Install gitstats
+  package: name=gitstats state=latest
+- name: Install GIMP
+  package: name=gimp state=latest
+- name: Install GNOME tweak tool
+  package: name=gnome-tweak-tool state=latest
+- name: Install Inkscape
+  package: name=inkscape state=latest
+- name: Install Midnight Commander
+  package: name=mc state=latest
+- name: Install python-bugzilla
+  package: name=python-bugzilla state=latest
+- name: Install screen
+  package: name=screen state=latest
+- name: Install spice-xpi
+  package: name=spice-xpi state=latest
+- name: Install xchat
+  package: name=xchat state=latest
+- name: Install terminator
+  package: name=terminator state=latest
+- name: Install Youtube-dl
+  package: name=youtube-dl state=latest
+# Include more involved installs.
+- include: slack-install.yaml
+- include: chrome-install.yaml
+- include: playonlinux-install.yaml
+- include: openra-install.yaml
+- include: tasks/virt-install.yaml
+- include: tasks/docker-machine-kvm-install.yaml
