@@ -26,6 +26,8 @@
         when: desktop == "true"
       - package: name=chkrootkit state=latest
         when: desktop == "true"
+      - package: name=dia state=latest
+        when: desktop == "true"
       - package: name=gitstats state=latest
         when: desktop == "true"
       - package: name=gimp state=latest
