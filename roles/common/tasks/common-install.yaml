@@ -1,0 +1,6 @@
+---
+- package: name=vim state=latest
+- package: name=git state=latest
+- package: name=wget state=latest
+- package: name=tuned state=latest
+- service: name=tuned state=started enabled=yes

@@ -1,0 +1,7 @@
+---
+- include: chrome-install.yaml
+- include: desktop-pkgs-install.yaml
+- include: docker-machine-kvm-install.yaml
+- include: openra-install.yaml
+- include: playonlinux-install.yaml
+- include: slack-install.yaml

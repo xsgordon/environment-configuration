@@ -1,0 +1,9 @@
+---
+- name: Environment Configuration for Server
+  hosts: "*"
+  remote_user: root
+  roles:
+    - role: common
+      user: "{{user}}"
+    - role: server
+      user: "{{user}}"

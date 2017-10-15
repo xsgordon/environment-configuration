@@ -34,5 +34,4 @@
 - include: chrome-install.yaml
 - include: playonlinux-install.yaml
 - include: openra-install.yaml
-- include: tasks/virt-install.yaml
-- include: tasks/docker-machine-kvm-install.yaml
+- include: docker-machine-kvm-install.yaml
