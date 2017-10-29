@@ -16,10 +16,10 @@ Installation
 * For servers - replace USERNAME with the user whose home directory the
   dotfiles should be installed in:
 
-    ansible-playbook -i hosts environment-configuration.yaml --extra-vars="server=true user=USERNAME"
+    ansible-playbook -i hosts environment-configuration-desktop.yaml --extra-vars="user=USERNAME"
 
 * For desktops - replace USERNAME with the user whose home directory the
   dotfiles should be installed in:
 
-    ansible-playbook -i hosts environment-configuration.yaml --extra-vars="desktop=true user=USERNAME"
+    ansible-playbook -i hosts environment-configuration-server.yaml --extra-vars="user=USERNAME"
 
