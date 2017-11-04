@@ -5,4 +5,3 @@
 * dotfile configuration assumes /home/user/ homedir structure.
 * Add meld
 * Add latest kubectl/minikube/minishift and update procedures.
-* Add tig

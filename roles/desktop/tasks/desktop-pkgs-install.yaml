@@ -23,6 +23,8 @@
   package: name=screen state=latest
 - name: Install spice-xpi
   package: name=spice-xpi state=latest
+- name: Install tig
+  package: name=tig state=latest
 - name: Install xchat
   package: name=xchat state=latest
 - name: Install terminator
