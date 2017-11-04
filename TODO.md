@@ -3,5 +3,4 @@
 * RPMFusion enablement
   - vlc install
 * dotfile configuration assumes /home/user/ homedir structure.
-* Add meld
 * Add latest kubectl/minikube/minishift and update procedures.

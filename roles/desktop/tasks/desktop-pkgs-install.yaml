@@ -17,6 +17,8 @@
   package: name=inkscape state=latest
 - name: Install Midnight Commander
   package: name=mc state=latest
+- name: Install meld
+  package: name=meld state=latest
 - name: Install python-bugzilla
   package: name=python-bugzilla state=latest
 - name: Install screen
