@@ -5,3 +5,4 @@
 - include: openra-install.yaml
 - include: playonlinux-install.yaml
 - include: slack-install.yaml
+- include: vscode.yaml
