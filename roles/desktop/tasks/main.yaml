@@ -1,8 +1,8 @@
 ---
-- include: chrome-install.yaml
-- include: desktop-pkgs-install.yaml
-- include: docker-machine-kvm-install.yaml
-- include: openra-install.yaml
-- include: playonlinux-install.yaml
-- include: slack-install.yaml
-- include: vscode.yaml
+- import_tasks: chrome-install.yaml
+- import_tasks: desktop-pkgs-install.yaml
+- import_tasks: docker-machine-kvm-install.yaml
+- import_tasks: openra-install.yaml
+- import_tasks: playonlinux-install.yaml
+- import_tasks: slack-install.yaml
+- import_tasks: vscode.yaml

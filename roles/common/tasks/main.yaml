@@ -1,8 +1,8 @@
 ---
 - package: name=libselinux-python state=latest
   become: true
-- include: update.yaml
-- include: common-install.yaml
-- include: nested-virt-intel.yaml
-- include: virt-install.yaml
-- include: dotfile-install.yaml
+- import_tasks: update.yaml
+- import_tasks: common-install.yaml
+- import_tasks: nested-virt-intel.yaml
+- import_tasks: virt-install.yaml
+- import_tasks: dotfile-install.yaml
