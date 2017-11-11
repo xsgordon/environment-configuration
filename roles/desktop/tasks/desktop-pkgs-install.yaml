@@ -33,9 +33,3 @@
   package: name=terminator state=latest
 - name: Install Youtube-dl
   package: name=youtube-dl state=latest
-# Include more involved installs.
-- include: slack-install.yaml
-- include: chrome-install.yaml
-- include: playonlinux-install.yaml
-- include: openra-install.yaml
-- include: docker-machine-kvm-install.yaml
