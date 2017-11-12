@@ -1,9 +1,0 @@
----
-- name: Environment Configuration for Desktop
-  hosts: "*"
-  remote_user: root
-  roles:
-    - role: common
-      user: "{{user}}"
-    - role: desktop
-      user: "{{user}}"

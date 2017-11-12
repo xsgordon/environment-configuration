@@ -6,3 +6,14 @@
   roles:
       - role: common
         user: "{{user}}"
+        tags:
+            - server
+            - desktop
+      - role: server
+        user: "{{user}}"
+        tags:
+            - server
+      - role: desktop
+        user: "{{user}}"
+        tags:
+            - desktop
