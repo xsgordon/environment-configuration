@@ -98,3 +98,9 @@ $LIGHT_GRAY> "
   PS4='+ '
 }
 proml
+
+# Add kubectl auto-completion if kubectl is available in the path
+which kubectl &>/dev/null
+if [ $? -eq 0 ]; then
+    source <(kubectl completion bash)
+fi
