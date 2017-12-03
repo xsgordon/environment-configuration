@@ -23,6 +23,7 @@ alias grep="/bin/grep --color"
 alias zgrep="/usr//bin/zgrep --color"
 alias less="/usr/bin/less -R"
 alias more="/usr/bin/more -R"
+alias top="/usr/bin/htop"
 
 # Alias to include ssh options, allows me to keep these in my 'travelling' 
 # config rather than my SSH configs on specific machines.
