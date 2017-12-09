@@ -19,6 +19,8 @@
   package: name=mc state=latest
 - name: Install meld
   package: name=meld state=latest
+- name: Install pandoc
+  package: name=pandoc state=latest
 - name: Install python-bugzilla
   package: name=python-bugzilla state=latest
 - name: Install screen
