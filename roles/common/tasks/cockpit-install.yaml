@@ -1,0 +1,15 @@
+---
+- name: Install Cockpit
+  package: name=cockpit state=latest
+- name: Install Cockpit Dashboard
+  package: name=cockpit-dashboard state=latest
+- name: Enable Cockpit port in Firewall
+  firewalld:
+    port: 9090/tcp
+    permanent: true
+    state: enabled
+- name: Enable Cockpit
+  systemd:
+    name: cockpit.socket
+    state: started
+    enabled: true
