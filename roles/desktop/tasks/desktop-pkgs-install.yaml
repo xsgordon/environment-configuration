@@ -13,6 +13,8 @@
   package: name=gimp state=latest
 - name: Install GNOME tweak tool
   package: name=gnome-tweak-tool state=latest
+- name: Install hexchat
+  package: name=hexchat state=latest
 - name: Install Inkscape
   package: name=inkscape state=latest
 - name: Install Midnight Commander
@@ -29,8 +31,6 @@
   package: name=spice-xpi state=latest
 - name: Install tig
   package: name=tig state=latest
-- name: Install xchat
-  package: name=xchat state=latest
 - name: Install terminator
   package: name=terminator state=latest
 - name: Install Youtube-dl
