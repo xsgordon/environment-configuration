@@ -3,6 +3,8 @@
   package: name=cockpit state=latest
 - name: Install Cockpit Dashboard
   package: name=cockpit-dashboard state=latest
+- name: Install Cockpit VM plugin
+  package: name=cockpit-machines state=latest
 - name: Enable Cockpit port in Firewall
   firewalld:
     port: 9090/tcp
