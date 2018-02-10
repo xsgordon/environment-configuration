@@ -1,6 +1,6 @@
 ---
-#   ansible-playbook -i hosts environment-configuration.yaml --extra-vars="server=true user=sgordon"
-#   ansible-playbook -i hosts environment-configuration.yaml --extra-vars="desktop=true user=sgordon"
+#   ansible-playbook -i hosts environment-configuration.yaml --tags "server" --extra-vars="user=sgordon"
+#   ansible-playbook -i hosts environment-configuration.yaml --tags "desktop" --extra-vars="user=sgordon"
 - hosts: "*"
   remote_user: root
   roles:
