@@ -10,3 +10,6 @@
 - name: Install VScode
   package:
     name: code
+- name: Install pyLint
+  package:
+    name: pylint
