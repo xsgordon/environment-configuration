@@ -1,0 +1,5 @@
+---
+- name: Install screen
+  package:
+      name: screen
+      state: latest

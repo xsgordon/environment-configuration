@@ -6,3 +6,4 @@
 - import_tasks: nested-virt-intel.yaml
 - import_tasks: virt-install.yaml
 - import_tasks: dotfile-install.yaml
+- import_tasks: screen.yaml
