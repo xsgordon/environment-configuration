@@ -1,0 +1,7 @@
+- name: Disable PackageKit package caching
+  ini_file:
+    path: /etc/PackageKit/PackageKit.conf
+    section: Daemon
+    option: KeepCache
+    value: false
+    mode: 0644
