@@ -5,8 +5,8 @@
   yum_repository:
       name: slack
       description: slack
-      baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
-      gpgkey: https://packagecloud.io/gpg.key
+      baseurl: https://downloads.slack-edge.com/linux_releases/slack-4.8.0-0.1.fc21.x86_64.rpm
+      gpgkey: https://slack.com/gpg/slack_pubkey_2019.gpg
       gpgcheck: 1
       enabled: 1
 - package: name=slack state=latest
