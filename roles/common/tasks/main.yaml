@@ -1,6 +1,10 @@
 ---
 - package: name=libselinux-python state=latest
   become: true
+  when: ansible_distribution == "Fedora" and ansible_distribution_major_version < "32"
+- package: name=python3-libselinux state=latest
+  become: true
+  when: ansible_distribution == "Fedora" and ansible_distribution_major_version >= "32"
 - import_tasks: update.yaml
 - import_tasks: common-install.yaml
 - import_tasks: nested-virt-intel.yaml
