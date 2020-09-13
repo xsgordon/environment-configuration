@@ -12,6 +12,8 @@
 - name: Install GIMP
   package: name=gimp state=latest
 - name: Install GNOME tweak tool
+  package: name=golang state=latest
+- name: Install golang
   package: name=gnome-tweak-tool state=latest
 - name: Install hexchat
   package: name=hexchat state=latest
