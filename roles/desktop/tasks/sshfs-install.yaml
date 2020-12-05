@@ -1,0 +1,5 @@
+---
+- name: Install sshfs
+  package:
+      name: sshfs
+      state: latest

@@ -5,6 +5,7 @@
 - import_tasks: openra-install.yaml
 - import_tasks: playonlinux-install.yaml
 - import_tasks: slack-install.yaml
+- import_tasks: sshfs-install.yaml
 - import_tasks: vscode.yaml
 - import_tasks: packagekit-cache-disable.yaml
 - import_tasks: tlp-install.yaml
