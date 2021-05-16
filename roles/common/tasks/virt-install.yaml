@@ -1,7 +1,10 @@
 ---
 - name: Install Libvirt Client
   package: name=libvirt-client state=latest
+  become: true
 - name: Install Libvirt Daemon
   package: name=libvirt-daemon state=latest
+  become: true
 - name: Install QEMU
   package: name=qemu-kvm state=latest
+  become: true

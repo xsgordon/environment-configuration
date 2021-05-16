@@ -5,3 +5,4 @@
     option: KeepCache
     value: false
     mode: 0644
+  become: true

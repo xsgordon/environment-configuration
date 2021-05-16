@@ -6,5 +6,7 @@
     description: playonlinux
     baseurl: http://rpm.playonlinux.com/fedora/yum/base
     gpgkey: http://rpm.playonlinux.com/public.gpg
+  become: true
 - name: Install playonlinux
   package: name=playonlinux state=latest
+  become: true

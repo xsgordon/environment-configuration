@@ -4,22 +4,29 @@
     name=net.ipv4.conf.default.rp_filter
     value=0
     state=present
+  become: true
 - name: Disable reverse path filtering (all)
   sysctl: >
     name=net.ipv4.conf.all.rp_filter
     value=0
     state=present
+  become: true
 - name: Set remote file path
   set_fact: remote_file_path=/etc/modprobe.d/kvm_intel.conf
+  become: true
 - name: Create file
   file: path="{{ remote_file_path }}" state=touch
+  become: true
 - stat: path="{{ remote_file_path }}"
   register: file_path
+  become: true
 - set_fact:
     file_content: |
       options kvm-intel nested=1
       options kvm-intel enable_shadow_vmcs=1
       options kvm-intel enable_apicv=1
       options kvm-intel ept=1
+  become: true
 - copy: content="{{ file_content }}" dest="{{ remote_file_path }}"
   when: file_path.stat.exists == true
+  become: true

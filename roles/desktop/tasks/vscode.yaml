@@ -7,9 +7,12 @@
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: 1
     enabled: 1
+  become: true
 - name: Install VScode
   package:
     name: code
+  become: true
 - name: Install pyLint
   package:
     name: pylint
+  become: true

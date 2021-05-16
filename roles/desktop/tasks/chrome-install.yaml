@@ -6,5 +6,7 @@
     description: google-chrome
     baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch/
     gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
+  become: true
 - name: Install chrome
   package: name=google-chrome-stable state=latest
+  become: true

@@ -1,39 +1,55 @@
 ---
 - name: Install ansible
   package: name=ansible state=latest
+  become: true
 - name: Install colordiff
   package: name=colordiff state=latest
+  become: true
 - name: Install chkrootkit
   package: name=chkrootkit state=latest
+  become: true
 - name: Install dia
   package: name=dia state=latest
+  become: true
 - name: Install gitstats
   package: name=gitstats state=latest
+  become: true
 - name: Install GIMP
   package: name=gimp state=latest
+  become: true
 - name: Install GNOME tweak tool
   package: name=golang state=latest
+  become: true
 - name: Install golang
   package: name=gnome-tweak-tool state=latest
+  become: true
 - name: Install hexchat
   package: name=hexchat state=latest
+  become: true
 - name: Install Inkscape
   package: name=inkscape state=latest
+  become: true
 - name: Install Midnight Commander
   package: name=mc state=latest
+  become: true
 - name: Install meld
   package: name=meld state=latest
+  become: true
 - name: Install pandoc
   package: name=pandoc state=latest
+  become: true
 - name: Install python-bugzilla
   package: name=python-bugzilla state=latest
+  become: true
 - name: Install screen
   package: name=screen state=latest
-- name: Install spice-xpi
-  package: name=spice-xpi state=latest
+  become: true
 - name: Install tig
   package: name=tig state=latest
+  become: true
 - name: Install terminator
   package: name=terminator state=latest
+  become: true
 - name: Install Youtube-dl
   package: name=youtube-dl state=latest
+  become: true

@@ -1,3 +1,4 @@
 ---
 - name: update packages
   package: name=* state=latest
+  become: true

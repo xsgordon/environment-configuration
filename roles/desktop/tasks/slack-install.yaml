@@ -9,8 +9,10 @@
       gpgkey: https://slack.com/gpg/slack_pubkey_2019.gpg
       gpgcheck: 1
       enabled: 1
+  become: true
 - package: name=slack state=latest
 - lineinfile:
     dest: /usr/share/applications/slack.desktop
     regexp: "^Exec="
     line: "Exec=/usr/bin/cpulimit -l 10 /usr/bin/slack --disable-gpu %U"
+  become: true

@@ -1,34 +1,41 @@
 ---
 - name: Install tlp
   package: name=tlp state=latest
+  become: true
 - name: Install smartmontools
   package: name=smartmontools state=latest
+  become: true
 - name: Configure TLP start charge threshold for BAT0
   ini_file:
     path: /etc/tlp.conf
     option: START_CHARGE_THRESH_BAT0
     value: 75
     section: null
+  become: true
 - name: Configure TLP start charge threshold for BAT1
   ini_file:
     path: /etc/tlp.conf
     option: START_CHARGE_THRESH_BAT1
     value: 75
     section: null
+  become: true
 - name: Configure TLP start charge threshold for BAT0
   ini_file:
     path: /etc/tlp.conf
     option: STOP_CHARGE_THRESH_BAT0
     value: 80
     section: null
+  become: true
 - name: Configure TLP stop charge threshold for BAT1
   ini_file:
     path: /etc/tlp.conf
     option: STOP_CHARGE_THRESH_BAT1
     value: 80
     section: null
+  become: true
 - name: Enable TLP
   service:
     name: tlp
     state: started
     enabled: yes
+  become: true

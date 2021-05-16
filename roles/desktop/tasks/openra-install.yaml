@@ -5,5 +5,7 @@
     description: OpenRA
     baseurl: http://download.opensuse.org/repositories/games:/openra/Fedora_26/
     gpgkey: http://download.opensuse.org/repositories/games:/openra/Fedora_26/repodata/repomd.xml.key
+  become: true
 - name: Install OpenRA
   package: name=openra state=latest
+  become: true

@@ -3,3 +3,4 @@
   package:
       name: screen
       state: latest
+  become: true

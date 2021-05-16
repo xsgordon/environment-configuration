@@ -1,7 +1,13 @@
 ---
 - package: name=vim state=latest
+  become: true
 - package: name=git state=latest
+  become: true
 - package: name=wget state=latest
+  become: true
 - package: name=htop state=latest
+  become: true
 - package: name=tuned state=latest
+  become: true
 - service: name=tuned state=started enabled=yes
+  become: true

@@ -1,17 +1,22 @@
 ---
 - name: Install Cockpit
   package: name=cockpit state=latest
+  become: true
 - name: Install Cockpit Dashboard
   package: name=cockpit-dashboard state=latest
+  become: true
 - name: Install Cockpit VM plugin
   package: name=cockpit-machines state=latest
+  become: true
 - name: Enable Cockpit port in Firewall
   firewalld:
     port: 9090/tcp
     permanent: true
     state: enabled
+  become: true
 - name: Enable Cockpit
   systemd:
     name: cockpit.socket
     state: started
     enabled: true
+  become: true
