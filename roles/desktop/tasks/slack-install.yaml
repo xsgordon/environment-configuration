@@ -1,6 +1,7 @@
 ---
 - name: Install cpulimit
   package: name=cpulimit state=latest
+  become: true
 - name: Enable slack repo
   yum_repository:
       name: slack
