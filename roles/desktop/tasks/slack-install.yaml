@@ -12,6 +12,7 @@
       enabled: 1
   become: true
 - package: name=slack state=latest
+  become: true
 - lineinfile:
     dest: /usr/share/applications/slack.desktop
     regexp: "^Exec="
