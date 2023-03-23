@@ -5,6 +5,4 @@
 * dotfile configuration assumes /home/user/ homedir structure.
 * Add latest kubectl/minikube/minishift and update procedures.
 * Aleo font install https://alessiolaiso.com/aleo-font
-* /etc/systemd/journald.conf set SystemMaxUse=50
-* Coredump config
 * PackageKit cleanup job
