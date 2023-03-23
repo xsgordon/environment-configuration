@@ -1,0 +1,10 @@
+- name: Limit journald storage
+  ini_file:
+    path: /etc/systemd/journald.conf
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    mode: 0644
+  with_items:
+    - { section: "Journal", option: "SystemMaxUse", value: "50M" }
+  become: true
