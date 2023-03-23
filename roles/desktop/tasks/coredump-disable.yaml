@@ -1,0 +1,11 @@
+- name: Disable Systemd coredump storage
+  ini_file:
+    path: /etc/systemd/coredump.conf
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    mode: 0644
+  with_items:
+    - { section: "Coredump", option: "Storage", value: "none" }
+    - { section: "Coredump", option: "ProcessSizeMax", value: "0" }
+  become: true

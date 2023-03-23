@@ -1,4 +1,5 @@
 ---
+- import_tasks: coredump-disable.yaml
 - import_tasks: chrome-install.yaml
 - import_tasks: desktop-pkgs-install.yaml
 #- import_tasks: docker-machine-kvm-install.yaml
