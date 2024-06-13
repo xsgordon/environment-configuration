@@ -11,9 +11,6 @@
 - name: Install dia
   package: name=dia state=latest
   become: true
-- name: Install gitstats
-  package: name=gitstats state=latest
-  become: true
 - name: Install GIMP
   package: name=gimp state=latest
   become: true
