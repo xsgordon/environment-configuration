@@ -6,6 +6,11 @@ with which my standard operating environment can be replicated. An Ansible
 playbook to install and configure packages that form part of this environment is
 also provided.
 
+Pre-reqs
+--------
+
+* sudo dnf install -y ansible-core ansible-collection-ansible-posix ansible-collection-community-general
+
 Installation
 ------------
 
