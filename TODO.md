@@ -6,3 +6,4 @@
 * Add latest kubectl/minikube/minishift and update procedures.
 * Aleo font install https://alessiolaiso.com/aleo-font
 * PackageKit cleanup job
+* Discord update task
