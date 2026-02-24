@@ -1,0 +1,7 @@
+---
+- name: Install ansible collections general
+  package: name=ansible-collection-community-general state=latest
+  become: true
+- name: Install ansible collection posix
+  package: name=ansible-collection-ansible-posix.noarch state=latest
+  become: true
