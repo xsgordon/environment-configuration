@@ -14,7 +14,7 @@ Pre-reqs
 Installation
 ------------
 
-* git clone https://github.com/houseofzeus/environment-configuration.git`
+* git clone https://github.com/xsgordon/environment-configuration.git`
 
 * cd environment-configuration
 
