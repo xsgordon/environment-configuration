@@ -111,3 +111,10 @@ if [ -f '/home/sgordon/Source/google-cloud-sdk/path.bash.inc' ]; then . '/home/s
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/sgordon/Source/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sgordon/Source/google-cloud-sdk/completion.bash.inc'; fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/sgordon/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# Source private file for local variables
+if [ -f '~/.bashrc-private' ]; then source .bashrc-private; fi
