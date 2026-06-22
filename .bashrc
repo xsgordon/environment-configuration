@@ -117,4 +117,6 @@ export PATH="$PATH:/home/sgordon/.lmstudio/bin"
 # End of LM Studio CLI section
 
 # Source private file for local variables
-if [ -f '~/.bashrc-private' ]; then source .bashrc-private; fi
+if [ -f ~/.bashrc-private ]; then
+    . ~/.bashrc-private
+fi
